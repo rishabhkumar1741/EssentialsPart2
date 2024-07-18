@@ -1,4 +1,4 @@
-@if(!outputDates)
+@if(!outputDates())
 {
   <p class="center">Please enter some values and press "Calculate".</p>
 } @else {
@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    @for(result of outputDates; track result.year)
+    @for(result of outputDates(); track result.year)
     {
       <tr>
         <td>{{result.year}}</td>

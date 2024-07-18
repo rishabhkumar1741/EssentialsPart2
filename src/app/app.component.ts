@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from "./header/header.component";
 import {UserInputComponent} from "./user-input/user-input.component";
 import {type InputDate, OutputDate} from "./appModel";
 import {InvestmentResultsComponent} from "./investment-results/investment-results.component";
+
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent
   title = 'Essentials_part_2';
 
   //variable
-  outputDates?:OutputDate[]
+  outputDates= signal<OutputDate[]|undefined>(undefined)
 
   calculateInvestmentResults(data:InputDate ) {
     const {initialInvestment, annualInvestment, duration, expectedReturn} = data;
@@ -40,7 +41,7 @@ export class AppComponent
       });
     }
 
-    this.outputDates = annualData;
+    this.outputDates.set(annualData)
 
   }
 }

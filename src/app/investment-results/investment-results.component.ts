@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {OutputDate} from "../appModel";
 import {CurrencyPipe} from "@angular/common";
 
@@ -11,5 +11,5 @@ import {CurrencyPipe} from "@angular/common";
 })
 export class InvestmentResultsComponent {
   //Input
-  @Input() outputDates?:OutputDate[]
+  outputDates = input<OutputDate[] >()
 }
