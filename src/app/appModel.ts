@@ -12,5 +12,4 @@ export interface OutputDate {
   totalInterest:number;
   valueEndOfYear:number;
   year:number;
-
 }

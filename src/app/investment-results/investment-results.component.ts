@@ -1,6 +1,6 @@
-import {Component, input} from '@angular/core';
-import {OutputDate} from "../appModel";
+import {Component} from '@angular/core';
 import {CurrencyPipe} from "@angular/common";
+import {InverstmentService} from "../inverstment.service";
 
 @Component({
   selector: 'app-investment-results',
@@ -10,6 +10,19 @@ import {CurrencyPipe} from "@angular/common";
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  //Input
-  outputDates = input<OutputDate[] >()
+
+
+  //constructer
+  constructor(inverstmentservice : InverstmentService,) {
+    this.inverstmentservice = inverstmentservice;
+  }
+
+  //VARIABLE
+  inverstmentservice:InverstmentService;
+  get results()
+  {
+    return this.inverstmentservice.resultData
+  }
+
+
 }
