@@ -21,7 +21,7 @@ export class InvestmentResultsComponent {
   inverstmentservice:InverstmentService;
   get results()
   {
-    return this.inverstmentservice.resultData
+    return this.inverstmentservice.resultData.asReadonly();
   }
 
 
